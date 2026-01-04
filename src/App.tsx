@@ -10,7 +10,7 @@ function App() {
   const [metadata, setMetadata] = useState<MoleculeMetadata | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [visualizationStyle, setVisualizationStyle] = useState<VisualizationStyle>('stick');
-  const [spin, setSpin] = useState<boolean>(false);
+  const [spin, setSpin] = useState<boolean>(true);
   const [backgroundColor, setBackgroundColor] = useState<string>('#555');
   const [error, setError] = useState<string | null>(null);
 
@@ -97,13 +97,11 @@ function App() {
             </ul>
           </div>
 
-          {/* Rendering Settings - Moved to Sidebar */}
-          <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px', border: '1px solid #eee' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.1rem', color: '#333' }}>Display Settings</h3>
+          <div style={{ padding: '1rem', backgroundColor: '#555', borderRadius: '8px', border: '1px solid #eee' }}>
+            <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>Display Settings</h3>
             
-            {/* Style Selection */}
             <div style={{ marginBottom: '1rem' }}>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 'bold', color: '#555' }}>Style</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 'bold'}}>Style</label>
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {(['stick', 'sphere', 'line'] as VisualizationStyle[]).map((style) => (
                   <button
@@ -139,7 +137,7 @@ function App() {
                 </select>
               </label>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.9rem', cursor: 'pointer', color: '#555' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.9rem', cursor: 'pointer'}}>
                 <input 
                   type="checkbox" 
                   checked={spin} 
