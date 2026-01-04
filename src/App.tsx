@@ -191,7 +191,8 @@ function App() {
                     <li><strong>XLogP3 (Hydrophobicity):</strong> {metadata.xLogP ?? 'N/A'}</li>
                     <li><strong>TPSA (Polar Surface Area):</strong> {metadata.tpsa ?? 'N/A'} Å²</li>
                     <li><strong>Formal Charge:</strong> {metadata.charge ?? 0}</li>
-                    {metadata.cid && (
+                  </ul>
+                  {metadata.cid && (
                     <div style={{ marginTop: '1rem' }}>
                       <a 
                         href={`https://pubchem.ncbi.nlm.nih.gov/compound/${metadata.cid}`}
@@ -203,7 +204,6 @@ function App() {
                       </a>
                     </div>
                   )}
-                  </ul>
                 </div>
               </div>
             </div>
