@@ -38,7 +38,7 @@ function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', padding: '2rem', gap: '1rem', maxWidth: '1200px', margin: '0 auto' }}>
       <header>
-        <h1>Molecule Renderer</h1>
+        <h1>Render A Molecule</h1>
         <p>Fetch and render 3D structures from PubChem.</p>
       </header>
 
@@ -210,6 +210,17 @@ function App() {
           )}
         </main>
       </div>
+
+      <footer style={{ marginTop: '2rem', textAlign: 'center', color: '#888', fontSize: '0.9rem' }}>
+        <a 
+          href="https://github.com/tealwp/moljs" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}
+        >
+          View source on GitHub @tealwp
+        </a>
+      </footer>
     </div>
   );
 }
