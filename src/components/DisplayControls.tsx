@@ -46,7 +46,7 @@ export function DisplayControls({
                   fontSize: "0.85rem",
                   backgroundColor:
                     visualizationStyle === style ? "#1d769aff" : "#ccc",
-                  color: visualizationStyle === style ? "white" : "#555",
+                  color: visualizationStyle === style ? "#ccc" : "#555",
                   border: "1px solid #ccc",
                   cursor: "pointer",
                   borderRadius: "4px",
@@ -60,9 +60,10 @@ export function DisplayControls({
             value={backgroundColor}
             onChange={(e) => setBackgroundColor(e.target.value)}
             style={{ marginLeft: "0.5rem", padding: "0.25rem" }}
+            defaultValue={backgroundColor}
           >
-            <option value="#ccc">Light</option>
             <option value="#333">Dark</option>
+            <option value="#ccc">Light</option>
           </select>
           <label
             style={{

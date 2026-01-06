@@ -27,7 +27,7 @@ export const MoleculeViewer = ({
   sdfData,
   style,
   spin = true,
-  backgroundColor = "#555",
+  backgroundColor = "#333",
 }: MoleculeViewerProps) => {
   const viewerRef = useRef<HTMLDivElement>(null);
   const viewerInstance = useRef<GLViewer | null>(null);
@@ -37,7 +37,7 @@ export const MoleculeViewer = ({
 
     // Initialize the viewer if it doesn't exist
     if (!viewerInstance.current) {
-      const config = { backgroundColor: "#555" };
+      const config = { backgroundColor: "#333" };
       viewerInstance.current = $3Dmol.createViewer(viewerRef.current, config);
     }
   }, []);
