@@ -21,12 +21,15 @@ function App() {
   const [visualizationStyle, setVisualizationStyle] =
     useState<VisualizationStyle>("stick");
   const [spin, setSpin] = useState<boolean>(true);
-  const [backgroundColor, setBackgroundColor] = useState<string>("#555");
+  const [backgroundColor, setBackgroundColor] = useState<string>("#333");
   const [error, setError] = useState<string | null>(null);
 
   const handleRender = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputValue) return;
+    if (!inputValue) {
+      setInputType("name");
+      setInputValue("Aspirin");
+    }
 
     setLoading(true);
     setError(null);
