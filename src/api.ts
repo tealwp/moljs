@@ -40,7 +40,7 @@ export const fetchMoleculeData = async (
     if (!sdfResponse.ok) {
       if (sdfResponse.status === 404) {
         throw new Error(
-          `Molecule not found or 3D structure unavailable for: ${input}`
+          `Molecule not found or 3D structure unavailable for: ${input} as input type ${type}`
         );
       }
       throw new Error(`API Error (SDF): ${sdfResponse.statusText}`);

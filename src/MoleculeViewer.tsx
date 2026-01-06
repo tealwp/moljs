@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import * as $3Dmol from '3dmol/build/3Dmol.js';
+import { useEffect, useRef } from "react";
+import * as $3Dmol from "3dmol/build/3Dmol.js";
 
-export type VisualizationStyle = 'stick' | 'sphere' | 'line';
+export type VisualizationStyle = "stick" | "sphere" | "line";
 
 interface MoleculeViewerProps {
   sdfData: string | null;
@@ -13,14 +13,22 @@ interface MoleculeViewerProps {
 interface GLViewer {
   clear: () => void;
   addModel: (data: string, format: string) => void;
-  setStyle: (selection: Record<string, unknown>, style: Record<string, unknown>) => void;
+  setStyle: (
+    selection: Record<string, unknown>,
+    style: Record<string, unknown>
+  ) => void;
   setBackgroundColor: (color: string, alpha?: number) => void;
   spin: (axis: string | boolean, speed?: number) => void;
   zoomTo: () => void;
   render: () => void;
 }
 
-export const MoleculeViewer = ({ sdfData, style, spin = true, backgroundColor = '#555' }: MoleculeViewerProps) => {
+export const MoleculeViewer = ({
+  sdfData,
+  style,
+  spin = true,
+  backgroundColor = "#555",
+}: MoleculeViewerProps) => {
   const viewerRef = useRef<HTMLDivElement>(null);
   const viewerInstance = useRef<GLViewer | null>(null);
 
@@ -29,7 +37,7 @@ export const MoleculeViewer = ({ sdfData, style, spin = true, backgroundColor = 
 
     // Initialize the viewer if it doesn't exist
     if (!viewerInstance.current) {
-      const config = { backgroundColor: '#555' };
+      const config = { backgroundColor: "#555" };
       viewerInstance.current = $3Dmol.createViewer(viewerRef.current, config);
     }
   }, []);
@@ -80,18 +88,18 @@ export const MoleculeViewer = ({ sdfData, style, spin = true, backgroundColor = 
     const viewer = viewerInstance.current;
     if (!viewer) return;
     // 'y' axis, speed 0.5
-    viewer.spin(spin ? 'y' : false, 0.5);
+    viewer.spin(spin ? "y" : false, 0.5);
   }, [spin]);
 
   return (
-    <div 
-      ref={viewerRef} 
-      style={{ 
-        width: '100%', 
-        height: '500px',
-        borderRadius: '8px',
-        position: 'relative'
-      }} 
+    <div
+      ref={viewerRef}
+      style={{
+        width: "100%",
+        height: "500px",
+        borderRadius: "8px",
+        position: "relative",
+      }}
     />
   );
 };
